@@ -1,0 +1,42 @@
+@import "../../../theme/lib/variables.scss";
+
+.filter-actions {
+  display: flex;
+  margin-top: 20px;
+  font-size: 16px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .buttom {
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+
+  .buttom-add-excepcion {
+    background-color: $color-yellowbolivar;
+    margin-right: 10px;
+    color: $color-greenbolivar;
+  }
+
+  .buttom-bulk-load {
+    border: 1px solid $color-greenbolivar;
+    color: $color-greenbolivar;
+  }
+}
+
+input[type="radio"]{
+  accent-color: $color-greenbolivar;
+}

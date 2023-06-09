@@ -1,0 +1,38 @@
+@import "../../../theme/lib/variables.scss";
+
+.tab {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  padding: 40px 0 0 0;
+  gap: 10px;
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
+  .eyelash{
+    box-sizing: border-box;
+    background: white;
+    border: 1px solid white;
+    border-radius: 8px 8px 0px 0px;
+    height: 33px;
+    padding: 7px 15px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .activeyelash{
+    background-color: $color-graybolivar-light;
+    border: 1px solid $color-graybolivar-light;
+    font-weight: bold;
+  }
+}
+
+.tab-content{
+  background-color: $color-graybolivar-light;
+  padding: 20px;
+}

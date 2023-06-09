@@ -1,0 +1,15 @@
+table{
+  select{
+    height: 40px;
+    border-radius: 5px;
+    padding: 8px 8px 8px 16px;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+  tr{
+    td:last-child{
+      padding-left: 30px;
+    }
+  }
+}
+

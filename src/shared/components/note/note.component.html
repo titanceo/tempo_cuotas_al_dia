@@ -1,0 +1,11 @@
+<div class="content">
+  <div id="item" [ngClass]="{'background-color-warning':type=='warning'}"></div>
+  <div id="icon" [ngClass]="{'color-warning':type=='warning'}">
+    <mat-icon *ngIf="type=='warning'">report_problem</mat-icon>
+  </div>
+  <div id="message">
+    <div class="title">Tenga en cuenta que:</div>
+    <div class="message">{{message}}</div>
+  </div>
+
+</div>

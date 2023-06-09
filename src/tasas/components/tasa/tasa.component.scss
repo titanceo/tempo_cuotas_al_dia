@@ -1,0 +1,21 @@
+@import "../../../theme/lib/variables.scss";
+.filter{
+  margin-top: 20px;
+}
+
+.acciones{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  mat-icon{
+    color: $color-greenbolivar;
+    margin: 0 15px;
+  }
+}
+
+.tasaActual{
+  width: 23%;
+  padding: 10px 16px;
+  border-radius: 5px;
+  border: 2px solid $color-graybolivar-dark;
+}

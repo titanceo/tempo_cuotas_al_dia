@@ -1,0 +1,51 @@
+<app-note [message]="'Cualquier excepción aplica para el cruce del proximo mes'" [type]="'warning'"></app-note>
+
+<div class="filter-actions">
+  <div><app-filter></app-filter></div>
+  <div class="actions">
+    <div class="buttom buttom-add-excepcion">Agregar excepción</div>
+    <div class="buttom buttom-bulk-load">
+      <div> Carga Masiva </div>
+      <div><mat-icon>description</mat-icon></div>
+    </div>
+  </div>
+</div>
+
+
+<table mat-table [dataSource]="dataSource" class="tabla">
+
+  <ng-container matColumnDef="Nit">
+    <th mat-header-cell *matHeaderCellDef> Nit </th>
+    <td mat-cell *matCellDef="let listExcepciones"> {{listExcepciones.nit}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="FechaDeExcepcion">
+    <th mat-header-cell *matHeaderCellDef> Fecha de Excepción </th>
+    <td mat-cell *matCellDef="let listExcepciones"> {{listExcepciones.fechaExcepcion}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="motivoExcepcion">
+    <th mat-header-cell *matHeaderCellDef> Motivo de la Excepción </th>
+    <td mat-cell *matCellDef="let listExcepciones"> {{listExcepciones.motivoExcepcion}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="aplicaExcepcion">
+    <th mat-header-cell *matHeaderCellDef> Aplica Excepción </th>
+    <td mat-cell *matCellDef="let listExcepciones">
+      <input type="radio" id="opcion1" name="aplicaExcepcion_{{listExcepciones.index}}" value="Si"
+        [checked]="listExcepciones.aplicaExcepcion == 'Y'"><label for="Si">Si</label>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="radio" id="opcion1" name="aplicaExcepcion_{{listExcepciones.index}}" value="No"
+        [checked]="listExcepciones.aplicaExcepcion == 'N'"><label for="No">No</label>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+</table>
+
+<div class="paginator">
+  <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons="true"></mat-paginator>
+</div>
+
+

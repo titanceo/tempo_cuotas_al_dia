@@ -1,0 +1,10 @@
+<div class="tab">
+  <div *ngFor="let item of tabList; let i = index;" class="eyelash"
+       (click)="activeTabIndex=i" [class.activeyelash]="activeTabIndex===i" >
+    {{item.title}}
+  </div>
+</div>
+<div class="tab-content">
+  <ng-container *ngComponentOutlet="tabList[activeTabIndex].component"></ng-container>
+</div>
+

@@ -1,0 +1,47 @@
+<app-note [message]="'Cualquier modificación en las tasas de las primas solo será efectiva a partir del próximo mes'" [type]="'warning'"></app-note>
+<div class="filter">
+  <app-filter></app-filter>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="tabla">
+
+  <ng-container matColumnDef="Nit">
+    <th mat-header-cell *matHeaderCellDef> Nit </th>
+    <td mat-cell *matCellDef="let listTasas"> {{listTasas.nit}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="fecha">
+    <th mat-header-cell *matHeaderCellDef> Fecha </th>
+    <td mat-cell *matCellDef="let listTasas"> {{listTasas.fecha}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="tasaAnterior">
+    <th mat-header-cell *matHeaderCellDef> Tasa Anterior </th>
+    <td mat-cell *matCellDef="let listTasas"> {{listTasas.tasaAnterior}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="tasaActual">
+    <th mat-header-cell *matHeaderCellDef> Tasa Actual </th>
+    <td mat-cell *matCellDef="let listTasas">
+      <div>Ajustar tasa de la prima</div>
+      <input type="text" value="{{listTasas.tasaActual}}" class="tasaActual">
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+    <td mat-cell *matCellDef="let listTasas">
+      <div class="acciones">
+        <mat-icon matTooltip="Guardar">save</mat-icon>
+        <mat-icon matTooltip="Editar">edit</mat-icon>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+</table>
+
+<div class="paginator">
+  <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+</div>
